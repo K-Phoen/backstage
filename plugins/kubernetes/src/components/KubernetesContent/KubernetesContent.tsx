@@ -48,6 +48,7 @@ import { ErrorReporting } from '../ErrorReporting';
 import { groupResponses } from '../../utils/response';
 import { DetectedError, detectErrors } from '../../error-detection';
 import { ServicesAccordions } from '../ServicesAccordions';
+import { IngressesAccordions } from '../IngressesAccordions';
 
 type KubernetesContentProps = { entity: Entity; children?: React.ReactNode };
 
@@ -194,6 +195,10 @@ const Cluster = ({ clusterObjects, detectedErrors }: ClusterProps) => {
                 deploymentResources={groupedResponses}
                 clusterPodNamesWithErrors={podsWithErrors}
               />
+            </Grid>
+
+            <Grid item>
+              <IngressesAccordions deploymentResources={groupedResponses} />
             </Grid>
 
             <Grid item>
